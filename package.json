@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "@angular/common": "~4.0.0",
-    "@angular/compiler": "2.4.10",
     "@angular/core": "~4.0.0",
     "@angular/forms": "~4.0.0",
     "@angular/http": "~4.0.0",

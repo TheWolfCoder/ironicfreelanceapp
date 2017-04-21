@@ -12,6 +12,9 @@
               #customer='ngModel'
               [(ngModel)]="proposal.customer"
       >
+      <div [hidden]="customer.valid || customer.pristine">
+        Customer name is required
+      </div>
     </div>
     
     <div class="form-group">
@@ -20,9 +23,12 @@
               id="portfolio_url"
               required
               name="portfolio_url"
-              #customer='ngModel'
+              #portfolio_url='ngModel'
               [(ngModel)]="proposal.portfolio_url"
       >
+      <div [hidden]="portfolio_url.valid || portfolio_url.pristine">
+        A Portfolio URL is required
+      </div>
     </div>
     
     <div class="form-group">
@@ -32,9 +38,12 @@
               placeholder="Ruby on Rails, Angular, etc"
               required
               name="tools"
-              #customer='ngModel'
+              #tools='ngModel'
               [(ngModel)]="proposal.tools"
       >
+      <div [hidden]="tools.valid || tools.pristine">
+        A list of tools is required
+      </div>
     </div>
     
     <div class="form-group">
@@ -43,9 +52,12 @@
               id="estimated_hours"
               required
               name="estimated_hours"
-              #customer='ngModel'
+              #estimated_hours='ngModel'
               [(ngModel)]="proposal.estimated_hours"
       >
+      <div [hidden]="estimated_hours.valid || estimated_hours.pristine">
+        You need to enter your estimated hours for the project
+      </div>
     </div>
     
     <div class="form-group">
@@ -54,9 +66,12 @@
               id="hourly_rate"
               required
               name="hourly_rate"
-              #customer='ngModel'
+              #hourly_rate='ngModel'
               [(ngModel)]="proposal.hourly_rate"
       >
+      <div [hidden]="hourly_rate.valid || hourly_rate.pristine">
+        You need to enter your hourly rate for the project
+      </div>
     </div>
     
     <div class="form-group">
@@ -65,19 +80,22 @@
               id="weeks_to_complete"
               required
               name="weeks_to_complete"
-              #customer='ngModel'
+              #weeks_to_complete='ngModel'
               [(ngModel)]="proposal.weeks_to_complete"
       >
+      <div [hidden]="weeks_to_complete.valid || weeks_to_complete.pristine">
+        You need to enter the weeks you estimate to complete the project
+      </div>
     </div>
     
     <div class="form-group">
-      <label for="customer">Client Email</label>
+      <label for="client_email">Client Email</label>
       <input type="email"
               id="client_email"
               placeholder="john@example.com"
               required
               name="client_email"
-              #customer='ngModel'
+              #client_email='ngModel'
               [(ngModel)]="proposal.client_email"
       >
     </div>

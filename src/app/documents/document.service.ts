@@ -6,7 +6,7 @@ import { Document } from './document';
 
 @Injectable()
 export class DocumentService {
-  private documentsUrl = 'http://localhost:8081/freelance_documents.json';
+  private documentsUrl = 'http://0.0.0.0:8081/freelance_documents';
   
   constructor(
     private http: Http

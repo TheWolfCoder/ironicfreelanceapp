@@ -1,35 +1,35 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Component } from '@angular/core';
 import { Document } from './document';
-import { DocumentService } from './document.service';
 
 @Component({
 	moduleId: module.id,
 	selector: 'documents',
 	templateUrl: 'documents.component.html',
-	styleUrls: ['documents.component.css'],
-	providers: [ DocumentService ]
+	styleUrls: ['documents.component.css']
 })
-export class DocumentsComponent implements OnInit {
+export class DocumentsComponent {
 		pageTitle: string = "Freelance Dashboard"
-	   documents: Document[];
-	   errorMessage: string;
-	   mode = "Observable";
-	   
-	   constructor(
-	   	private documentService: DocumentService;
-	   ) {}
-	   
-	   ngOnInit() {
-	   	let timer = Observable.timer(0, 5000);
-	   	timer.subscribe(() => this.getDocuments());
-	   }
-	   
-	   getDocuments() {
-	   	this.documentService.getDocuments()
-	   			.subscribe(
-	   				documents => this.documents = documents,
-	   				error => this.errorMessage = <any>error
-	   				);
-	   }
+	   documents: Document[] = [ 
+	   	{ 
+	   		title: "My First Doc", 
+	   	  description: "afdasdf l;akdjas;fjd", 
+	   	  file_url: "http://google.com", 
+	   	  updated_at: '11/11/16', 
+	   	  image_url: "https://cdn.pixabay.com/photo/2014/09/24/14/29/mac-459196_960_720.jpg",
+	   	},
+	   	{ 
+	   		title: "My Second Doc", 
+	   	  description: "afdasdf l;akdjas;fjd", 
+	   	  file_url: "http://google.com", 
+	   	  updated_at: '11/11/16', 
+	   	  image_url: "https://cdn.pixabay.com/photo/2014/12/27/15/31/camera-581126_960_720.jpg",
+	   	},
+	   	{ 
+	   		title: "My Last Doc", 
+	   	  description: "afdasdf l;akdjas;fjd", 
+	   	  file_url: "http://google.com", 
+	   	  updated_at: '11/11/16', 
+	   	  image_url: "https://cdn.pixabay.com/photo/2015/01/01/23/04/mouse-586244_960_720.jpg",
+	   	}
+		]
 }

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
-    "start": "node server.js",
+    "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
     "build": "tsc -p src/",
     "build:watch": "tsc -p src/ -w",
     "build:e2e": "tsc -p e2e/",
@@ -20,7 +20,7 @@
     "test:once": "karma start karma.conf.js --single-run",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "preinstall": "npm install -g http-server",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build && mv dist/* ."
   },
   "keywords": [],
   "author": "",
